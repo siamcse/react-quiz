@@ -1,10 +1,6 @@
 import React from 'react';
-import Button from '../Button';
-import Form from '../Form';
 import Illustration from '../Illustration';
-import TextInput from '../TextInput';
-import classes from '../styles/Login.module.css';
-import { Link } from 'react-router-dom';
+import LoginForm from '../LoginForm';
 
 
 const Login = () => {
@@ -13,13 +9,7 @@ const Login = () => {
             <h1>Login to your account</h1>
             <div className="column">
                 <Illustration />
-                <Form className={`${classes.login}`} >
-                    <TextInput type="text" placeholder="Enter emaili" icon="alternate_email" />
-                    <TextInput type="password" placeholder="Enter password" icon="lock" />
-                    <Button><span>Submit Now</span></Button>
-
-                    <div className="info">Don't have an account? <Link to="/signup">Signup</Link> instead.</div>
-                </Form>
+                <LoginForm />
             </div>
         </>
     );

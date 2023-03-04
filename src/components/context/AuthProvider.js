@@ -2,7 +2,7 @@ import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWith
 import React, { createContext, useEffect, useState } from 'react';
 import { app } from '../firebase/firebase.config';
 
-export const AuthContext = createContext();
+export const AuthContext = createContext(); 
 const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
@@ -29,6 +29,7 @@ const AuthProvider = ({ children }) => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             setCurrentUser(user);
             setLoading(false);
+            console.log(user);
         });
         return unsubscribe;
     }, [])
@@ -43,7 +44,7 @@ const AuthProvider = ({ children }) => {
     }
     return (
         <AuthContext.Provider value={value}>
-            {children}
+            {!loading && children}
         </AuthContext.Provider>
     );
 };
