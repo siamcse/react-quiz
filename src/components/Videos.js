@@ -20,7 +20,7 @@ const Videos = () => {
                 >
                     {
                         videos.map((video, i) => video.noq > 0 ?
-                            <Link key={i} to='/quiz'>
+                            <Link key={i} to={`/quiz/${video.youtubeID}`}>
                                 <Video title={video.title} id={video.youtubeID} noq={video.noq} />
                             </Link>
                             :
