@@ -30,7 +30,7 @@ export const router = createBrowserRouter([
                 element: <PrivateRoute><Quiz /></PrivateRoute>
             },
             {
-                path: '/result',
+                path: '/result/:id',
                 element: <PrivateRoute><Result /></PrivateRoute>
             }
         ]

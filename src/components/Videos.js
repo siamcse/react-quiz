@@ -24,7 +24,7 @@ const Videos = () => {
                                 <Video title={video.title} id={video.youtubeID} noq={video.noq} />
                             </Link>
                             :
-                            <Video title={video.title} id={video.youtubeID} noq={video.noq} />
+                            <Video key={i} title={video.title} id={video.youtubeID} noq={video.noq} />
                         )
                     }
                 </InfiniteScroll>

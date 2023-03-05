@@ -25,7 +25,6 @@ const useVideoList = (page) => {
                 const snapshot = await get(videoQuery);
                 setLoading(false);
                 if (snapshot.exists()) {
-                    console.log(snapshot.val())
                     setVideos((prevVideos) => {
                         return [...prevVideos, ...Object.values(snapshot.val())]
                     });
